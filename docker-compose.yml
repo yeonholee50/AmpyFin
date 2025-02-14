@@ -29,6 +29,15 @@ services:
     env_file:
       - .env
 
+  scores:
+    image: ampyfin
+    container_name: ampyfin-scores
+    command: ["utils/check_strategy_scores.py"]
+    profiles:
+      - scores
+    env_file:
+      - .env
+
   mongo:
     image: mongo:latest
     container_name: ampyfin-mongo

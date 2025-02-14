@@ -1,7 +1,13 @@
+import os
+import sys
+# Add the parent directory to sys.path
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 import logging
 from helper_files.client_helper import get_mongo_client
 from config_variables import MONGO_URL
 from datetime import datetime
+
 
 logging.basicConfig(
     level=logging.INFO,
